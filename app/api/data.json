@@ -1,7 +1,4 @@
-import React from 'react'
-
-
-const courses = [
+[
     {
         "id": 1,
         "title": "React Front To Back",
@@ -17,32 +14,3 @@ const courses = [
         "level": "Intermediate"
       }
 ]
-
-
-
-const Repospage = () => {
-    console.log(courses)
-    return (
-        <div>
-            <ul>
-                {courses.map((course) => {
-                    return (
-                        <li key={course.id}>{course.title}</li>
-                    )
-                })}
-            </ul>
-        
-    
- 
-        </div>
-    )
-   
-}
-
-export default Repospage
-
-/*
-  return (
-    <div>Repospage {courses[0].title} </div>
-  )
-  */

@@ -1,5 +1,4 @@
-import React from 'react'
-
+import { NextResponse } from "next/server";
 
 const courses = [
     {
@@ -19,30 +18,6 @@ const courses = [
 ]
 
 
-
-const Repospage = () => {
-    console.log(courses)
-    return (
-        <div>
-            <ul>
-                {courses.map((course) => {
-                    return (
-                        <li key={course.id}>{course.title}</li>
-                    )
-                })}
-            </ul>
-        
-    
- 
-        </div>
-    )
-   
+export async function GET(request) {
+    return NextResponse.json(courses)
 }
-
-export default Repospage
-
-/*
-  return (
-    <div>Repospage {courses[0].title} </div>
-  )
-  */
