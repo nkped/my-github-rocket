@@ -1,10 +1,8 @@
 import React from 'react'
 
-const LoadingPage = () => {
+export function LoadingPage() {
     return (
-      <div className='loader'>
-        <div className='spinner'></div>
-      </div>
-    );
-  };
+      <p>Loading Data...</p>
+    )
+  }
   export default LoadingPage;
