@@ -5,15 +5,14 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
 
 async function fetchRepos() {
     const response = await fetch('https://api.github.com/users/nkped/repos')
-
     await new Promise((resolve) => setTimeout(resolve, 2000))
     const repos = await response.json()
-
+    
     return repos
 }
 
 
-const Repospage = async () => {
+const ReposPage = async () => {
     const repos = await fetchRepos()
 
     return (
@@ -23,7 +22,6 @@ const Repospage = async () => {
                 {repos.map((repo) => (
                     <li key={repo.id}>
                         <Link href={`/code/repos/${repo.name}`}>
-
                         <h3>{repo.name}</h3>
                         <p>{repo.description}</p>
                         <div className="repo-details">
@@ -39,5 +37,5 @@ const Repospage = async () => {
     )   
 }
 
-export default Repospage
+export default ReposPage
 
