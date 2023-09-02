@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 async function fetchRepoContents(name) {
-    const response = await fetch(`https://api.github.com/repos/nkped/${name}/contents`)
+    const response = await fetch(`https://api.github.com/repos/nkped/${name}/contents`, { next: { revalidate:  86400 }})
     const contents = await response.json()
     
     console.log(contents)
@@ -11,6 +11,7 @@ async function fetchRepoContents(name) {
     return contents
 }
 
+//URL below should probs point to external github-url..
 
 const RepoDirs = async ({ name }) => {
     const contents = await fetchRepoContents(name)

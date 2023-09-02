@@ -1,9 +1,8 @@
 import React from 'react'
-//import Link from 'next/link'
 import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
 
 async function fetchRepo(name) {
-    const response = await fetch(`https://api.github.com/repos/nkped/${name}`)
+    const response = await fetch(`https://api.github.com/repos/nkped/${name}`, { next: { revalidate:  86400 }})
     const repo = await response.json()
 
     return repo
