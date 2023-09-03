@@ -4,7 +4,7 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
 
 
 async function fetchRepos() {
-    await new Promise((resolve) => setTimeout(resolve, 3000))
+    await new Promise((resolve) => setTimeout(resolve, 6000))
     const response = await fetch('https://api.github.com/users/nkped/repos', { next: { revalidate:  86400 }})
     const repos = await response.json()
     
